@@ -8,7 +8,8 @@ const Nweet = ({ nweetObj, isOwner }) => {
   const [newNweet, setNewNweet] = useState(nweetObj.text);
 
   const onDeleteClick = async () => {
-    const ok = window.confirm('삭제하시렵니까?');
+    const ok = window.confirm('삭제하시겠습니까?');
+    const prtest = 'prtest';
     if (ok) {
       await dbService.doc(`nweets/${nweetObj.id}`).delete();
       if (nweetObj.attachmentUrl !== '')
